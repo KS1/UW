@@ -47,9 +47,13 @@ var formHandler = function(event) {
 var getCoords = function(city) {
     var currentWeatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
+    console.log("Inside getCoords function 1");
+
     fetch(currentWeatherApi).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
+                console.log("Inside getCoords function 2");
+                console.log(data);
                 var lon = data.coord['lon'];
                 var lat = data.coord['lat'];
                 getCityForecast(city, lon, lat);
@@ -81,7 +85,8 @@ var getCityForecast = function(city, lon, lat) {
                 // identifies city name in forecast
                 cityNameEl.textContent = `${city} (${moment().format("M/D/YYYY")})`; 
 
-                console.log(data)
+                console.log(data);
+                
 
                 currentForecast(data);
                 fiveDayForecast(data);

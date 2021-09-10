@@ -4,7 +4,7 @@ using lat and long from response launch another api call to uvindex api also ope
 
 alter html elements to reflect information from api
 
-change backgroun of UV element depending on value
+change background of UV element depending on value
 
 build the cards based on forcast array
 
